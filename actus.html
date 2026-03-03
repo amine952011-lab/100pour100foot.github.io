@@ -6,32 +6,66 @@
 <title>100% FOOT - Actus</title>
 
 <style>
-body {margin:0;font-family:Arial;background:#0b0f1a;color:white;}
-header {background:#111827;padding:20px;text-align:center;}
-nav {background:#0f172a;padding:15px;text-align:center;}
-nav a {color:#00f0ff;margin:0 15px;text-decoration:none;font-weight:bold;}
-nav a:hover {color:white;}
-.container {max-width:1000px;margin:auto;padding:40px 20px;}
-.article {
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:#0b0f1a;color:white;}
+header{background:#000;padding:20px;text-align:center;font-size:24px;color:#00f0ff;}
+nav{background:#111827;padding:15px;text-align:center;}
+nav a{color:#00f0ff;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:white;}
+
+.container{max-width:1100px;margin:auto;padding:40px 20px;}
+
+.article{
 background:#111827;
+margin-bottom:30px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(0,240,255,0.2);
+transition:0.4s;
+}
+
+.article:hover{
+transform:translateY(-8px);
+box-shadow:0 0 35px rgba(0,240,255,0.6);
+}
+
+.article-content{
 padding:25px;
-margin-bottom:25px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,240,255,0.3);
+}
+
+.article h2{
+color:#00f0ff;
+margin-bottom:15px;
+}
+
+.meta{
+font-size:14px;
+opacity:0.6;
+margin-bottom:15px;
+}
+
+.read-more{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#00f0ff;
+color:black;
+border-radius:20px;
+text-decoration:none;
+font-weight:bold;
 transition:0.3s;
 }
-.article:hover {
-transform:translateY(-5px);
-box-shadow:0 0 30px rgba(0,240,255,0.6);
+
+.read-more:hover{
+background:white;
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-<h2>📰 ACTUALITÉS FOOT</h2>
-</header>
+<header>📰 ACTUALITÉS FOOTBALL</header>
 
 <nav>
 <a href="index.html">Accueil</a>
@@ -44,18 +78,30 @@ box-shadow:0 0 30px rgba(0,240,255,0.6);
 <div class="container">
 
 <div class="article">
-<h3>🔥 Gros transfert en préparation</h3>
-<p>Détails sur les dernières rumeurs du mercato.</p>
+<div class="article-content">
+<h2>🔥 PSG : Nouveau transfert en approche</h2>
+<div class="meta">Publié le 10 Mars 2026 • Mercato</div>
+<p>Le PSG serait en discussion avancée pour recruter un attaquant international. Les négociations pourraient aboutir rapidement.</p>
+<a href="#" class="read-more">Lire plus</a>
+</div>
 </div>
 
 <div class="article">
-<h3>🚑 Blessure importante</h3>
-<p>Mise à jour sur l’état physique des joueurs.</p>
+<div class="article-content">
+<h2>⚽ Ligue 1 : Résumé de la dernière journée</h2>
+<div class="meta">Publié le 9 Mars 2026 • Analyse</div>
+<p>Une journée riche en buts et en surprises. Monaco impressionne, Marseille reste solide.</p>
+<a href="#" class="read-more">Lire plus</a>
+</div>
 </div>
 
 <div class="article">
-<h3>⚽ Analyse du match du week-end</h3>
-<p>Résumé et points tactiques clés.</p>
+<div class="article-content">
+<h2>🚑 Blessure importante avant le choc</h2>
+<div class="meta">Publié le 8 Mars 2026 • Infos équipe</div>
+<p>Un joueur clé pourrait manquer le prochain match après une blessure à l'entraînement.</p>
+<a href="#" class="read-more">Lire plus</a>
+</div>
 </div>
 
 </div>
