@@ -1,67 +1,148 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>100% FOOT - Classements</title>
+<h2>Classement Ligue 1</h2>
 
-<style>
-body{margin:0;font-family:Arial;background:#0b0f1a;color:white;}
-header{text-align:center;padding:20px;font-size:24px;color:#00f0ff;}
-table{
-width:90%;
-margin:40px auto;
-border-collapse:collapse;
-background:#111827;
-border-radius:15px;
-overflow:hidden;
-}
-th,td{
-padding:15px;
-text-align:center;
-border-bottom:1px solid #1f2937;
-}
-th{color:#00f0ff;}
-tr:hover{background:#1f2937;}
-</style>
-</head>
+<table border="1" style="width:100%; text-align:left;">
 
-<body>
-
-<header>📊 Classement Ligue 1</header>
-
-<table id="classement">
 <thead>
 <tr>
 <th>#</th>
-<th>Équipe</th>
+<th>Club</th>
 <th>Points</th>
 </tr>
 </thead>
-<tbody>
-<tr><td></td><td>PSG</td><td>65</td></tr>
-<tr><td></td><td>Marseille</td><td>59</td></tr>
-<tr><td></td><td>Monaco</td><td>55</td></tr>
-<tr><td></td><td>Lille</td><td>52</td></tr>
-<tr><td></td><td>Lyon</td><td>48</td></tr>
+
+<tbody id="classement-body">
+
+<tr>
+<td></td>
+<td>Paris SG</td>
+<td class="points">57</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Lens</td>
+<td class="points">53</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Lyon</td>
+<td class="points">45</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Marseille</td>
+<td class="points">43</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Lille</td>
+<td class="points">40</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Rennes</td>
+<td class="points">40</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Monaco</td>
+<td class="points">37</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Strasbourg</td>
+<td class="points">35</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Brest</td>
+<td class="points">33</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Lorient</td>
+<td class="points">33</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Toulouse</td>
+<td class="points">31</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Angers</td>
+<td class="points">29</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Le Havre</td>
+<td class="points">26</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Paris FC</td>
+<td class="points">26</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Nice</td>
+<td class="points">24</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Auxerre</td>
+<td class="points">18</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Nantes</td>
+<td class="points">17</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Metz</td>
+<td class="points">13</td>
+</tr>
+
 </tbody>
 </table>
 
+<button onclick="trierClassement()">Actualiser classement</button>
+
 <script>
-const table = document.querySelector("#classement tbody");
-const rows = Array.from(table.querySelectorAll("tr"));
+function trierClassement() {
+let tbody = document.getElementById("classement-body");
+let lignes = Array.from(tbody.querySelectorAll("tr"));
 
-rows.sort((a,b)=>{
-    const pointsA = parseInt(a.children[2].innerText);
-    const pointsB = parseInt(b.children[2].innerText);
-    return pointsB - pointsA;
+lignes.sort((a, b) => {
+let pointsA = parseInt(a.querySelector(".points").textContent);
+let pointsB = parseInt(b.querySelector(".points").textContent);
+return pointsB - pointsA;
 });
 
-rows.forEach((row,index)=>{
-    row.children[0].innerText = index + 1;
-    table.appendChild(row);
+tbody.innerHTML = "";
+
+lignes.forEach((ligne, index) => {
+ligne.children[0].textContent = index + 1;
+tbody.appendChild(ligne);
 });
+}
+
+window.onload = trierClassement;
 </script>
-
-</body>
-</html>
