@@ -1,7 +1,79 @@
-<h2>Classement Ligue 1</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Classement Ligue 1</title>
 
-<table border="1" style="width:100%; text-align:left;">
+<style>
+body {
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color: white;
+font-family: Arial, sans-serif;
+padding: 40px;
+}
 
+h1 {
+text-align: center;
+margin-bottom: 30px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+border-radius: 10px;
+overflow: hidden;
+}
+
+thead {
+background: rgba(0,255,200,0.2);
+}
+
+th, td {
+padding: 12px;
+text-align: left;
+}
+
+tbody tr {
+transition: 0.3s;
+}
+
+tbody tr:hover {
+background: rgba(0,255,200,0.2);
+transform: scale(1.01);
+}
+
+.ucl {
+background-color: rgba(0,255,0,0.2);
+}
+
+.relegation {
+background-color: rgba(255,0,0,0.2);
+}
+
+button {
+margin-top: 20px;
+padding: 12px 20px;
+background: #00ffc3;
+border: none;
+border-radius: 8px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover {
+background: #00b894;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Classement Ligue 1</h1>
+
+<table>
 <thead>
 <tr>
 <th>#</th>
@@ -12,113 +84,24 @@
 
 <tbody id="classement-body">
 
-<tr>
-<td></td>
-<td>Paris SG</td>
-<td class="points">57</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Lens</td>
-<td class="points">53</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Lyon</td>
-<td class="points">45</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Marseille</td>
-<td class="points">43</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Lille</td>
-<td class="points">40</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Rennes</td>
-<td class="points">40</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Monaco</td>
-<td class="points">37</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Strasbourg</td>
-<td class="points">35</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Brest</td>
-<td class="points">33</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Lorient</td>
-<td class="points">33</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Toulouse</td>
-<td class="points">31</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Angers</td>
-<td class="points">29</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Le Havre</td>
-<td class="points">26</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Paris FC</td>
-<td class="points">26</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Nice</td>
-<td class="points">24</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Auxerre</td>
-<td class="points">18</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Nantes</td>
-<td class="points">17</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Metz</td>
-<td class="points">13</td>
-</tr>
+<tr><td></td><td>Paris SG</td><td class="points">57</td></tr>
+<tr><td></td><td>Lens</td><td class="points">53</td></tr>
+<tr><td></td><td>Lyon</td><td class="points">45</td></tr>
+<tr><td></td><td>Marseille</td><td class="points">43</td></tr>
+<tr><td></td><td>Lille</td><td class="points">40</td></tr>
+<tr><td></td><td>Rennes</td><td class="points">40</td></tr>
+<tr><td></td><td>Monaco</td><td class="points">37</td></tr>
+<tr><td></td><td>Strasbourg</td><td class="points">35</td></tr>
+<tr><td></td><td>Brest</td><td class="points">33</td></tr>
+<tr><td></td><td>Lorient</td><td class="points">33</td></tr>
+<tr><td></td><td>Toulouse</td><td class="points">31</td></tr>
+<tr><td></td><td>Angers</td><td class="points">29</td></tr>
+<tr><td></td><td>Le Havre</td><td class="points">26</td></tr>
+<tr><td></td><td>Paris FC</td><td class="points">26</td></tr>
+<tr><td></td><td>Nice</td><td class="points">24</td></tr>
+<tr><td></td><td>Auxerre</td><td class="points">18</td></tr>
+<tr><td></td><td>Nantes</td><td class="points">17</td></tr>
+<tr><td></td><td>Metz</td><td class="points">13</td></tr>
 
 </tbody>
 </table>
@@ -139,10 +122,25 @@ return pointsB - pointsA;
 tbody.innerHTML = "";
 
 lignes.forEach((ligne, index) => {
+
+ligne.classList.remove("ucl","relegation");
+
+if(index < 3){
+ligne.classList.add("ucl");
+}
+
+if(index >= lignes.length - 2){
+ligne.classList.add("relegation");
+}
+
 ligne.children[0].textContent = index + 1;
 tbody.appendChild(ligne);
+
 });
 }
 
 window.onload = trierClassement;
 </script>
+
+</body>
+</html>
