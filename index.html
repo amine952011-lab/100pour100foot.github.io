@@ -3,69 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>100% FOOT - Actus & Classements</title>
+<title>100% FOOT - Accueil</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0f0f0f;
-    color: white;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0f1a;
+    color:white;
 }
 
 header {
-    background: linear-gradient(90deg, #001f3f, #007bff);
-    padding: 20px;
-    text-align: center;
+    background:linear-gradient(90deg,#0f2027,#1e3c72,#2a5298);
+    padding:20px;
+    text-align:center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
+header img {
+    width:180px;
 }
 
 nav {
-    background: #111;
-    padding: 10px;
-    text-align: center;
+    background:#111827;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
 }
 
 nav a {
-    color: #00aaff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+    color:#00f0ff;
+    margin:0 20px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
+nav a:hover {
+    color:white;
+}
+
+.hero {
+    padding:60px 20px;
+    text-align:center;
+}
+
+.hero h1 {
+    font-size:40px;
+    color:#00f0ff;
 }
 
 .card {
-    background: #1a1a1a;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,123,255,0.3);
+    background:#111827;
+    padding:25px;
+    margin:20px auto;
+    max-width:900px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,240,255,0.3);
+    transition:0.3s;
 }
 
-button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+.card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(0,240,255,0.6);
+}
+
+.button {
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
 }
 
 footer {
-    background: #111;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    background:#111827;
+    padding:20px;
+    text-align:center;
+    margin-top:50px;
 }
 </style>
 </head>
@@ -73,47 +90,44 @@ footer {
 <body>
 
 <header>
-    <img src="logo.jpg" alt="100% FOOT Logo" style="width:220px; margin-bottom:15px;">
-    <h1>100% FOOT</h1>
-    <p>Toute l’actualité football en un seul endroit 🔥</p>
+<img src="logo.jpg">
+<h2>100% FOOT</h2>
 </header>
 
 <nav>
-    <a href="#">Accueil</a>
-    <a href="#">Actus</a>
-    <a href="#">Classements</a>
-    <a href="#">Match Center</a>
-    <a href="#">Progresser</a>
+<a href="index.html">Accueil</a>
+<a href="actus.html">Actus</a>
+<a href="classements.html">Classements</a>
+<a href="match-center.html">Match Center</a>
+<a href="progresser.html">Progresser</a>
 </nav>
 
-<section>
-    <h2>📰 Dernières Actus</h2>
+<section class="hero">
+<h1>Le Média Football Nouvelle Génération ⚽🔥</h1>
+<p>Actus, Classements, Analyses, Match Center et Conseils.</p>
 
-    <div class="card">
-        <h3>🔥 Transferts du moment</h3>
-        <p>Retrouve ici les dernières rumeurs et officialisations.</p>
-    </div>
-
-    <div class="card">
-        <h3>📊 Classement actuel</h3>
-        <p>Mise à jour des championnats européens chaque semaine.</p>
-    </div>
-
-    <div class="card">
-        <h3>⚽ Matchs du week-end</h3>
-        <p>Programme complet et analyses.</p>
-    </div>
-
-    <br>
-    <a href="https://whatsapp.com/channel/0029VbCW8ywIt5rr1wyvYM3V" target="_blank" style="display:inline-block; padding:12px 20px; background:#25D366; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
-    🔔 Rejoindre la chaîne WhatsApp
+<a href="https://whatsapp.com/channel/0029VbCW8ywIt5rr1wyvYM3V" target="_blank" class="button">
+🔔 Rejoindre la chaîne WhatsApp
 </a>
-    
-
 </section>
 
+<div class="card">
+<h3>🔥 Dernières Infos</h3>
+<p>Retrouve les transferts, blessures et rumeurs en direct.</p>
+</div>
+
+<div class="card">
+<h3>📊 Classements</h3>
+<p>Classements des grands championnats européens.</p>
+</div>
+
+<div class="card">
+<h3>⚽ Match Center</h3>
+<p>Programme des matchs et analyses complètes.</p>
+</div>
+
 <footer>
-    © 2026 100% FOOT - Tous droits réservés
+© 2026 100% FOOT - Tous droits réservés
 </footer>
 
 </body>
