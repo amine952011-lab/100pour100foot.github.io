@@ -6,65 +6,62 @@
 <title>100% FOOT - Classements</title>
 
 <style>
-body {margin:0;font-family:Arial;background:#0b0f1a;color:white;}
-header {background:#111827;padding:20px;text-align:center;}
-nav {background:#0f172a;padding:15px;text-align:center;}
-nav a {color:#00f0ff;margin:0 15px;text-decoration:none;font-weight:bold;}
-nav a:hover {color:white;}
-.container {max-width:1000px;margin:auto;padding:40px 20px;}
-.table-box {
-background:#111827;
-padding:25px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,240,255,0.3);
-}
-table {
-width:100%;
+body{margin:0;font-family:Arial;background:#0b0f1a;color:white;}
+header{text-align:center;padding:20px;font-size:24px;color:#00f0ff;}
+table{
+width:90%;
+margin:40px auto;
 border-collapse:collapse;
+background:#111827;
+border-radius:15px;
+overflow:hidden;
 }
-th, td {
-padding:12px;
+th,td{
+padding:15px;
 text-align:center;
 border-bottom:1px solid #1f2937;
 }
-th {
-color:#00f0ff;
-}
+th{color:#00f0ff;}
+tr:hover{background:#1f2937;}
 </style>
 </head>
 
 <body>
 
-<header>
-<h2>📊 CLASSEMENTS</h2>
-</header>
+<header>📊 Classement Ligue 1</header>
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="actus.html">Actus</a>
-<a href="classements.html">Classements</a>
-<a href="match-center.html">Match Center</a>
-<a href="progresser.html">Progresser</a>
-</nav>
-
-<div class="container">
-
-<div class="table-box">
-<h3>Ligue 1</h3>
-<table>
+<table id="classement">
+<thead>
 <tr>
 <th>#</th>
 <th>Équipe</th>
-<th>Pts</th>
+<th>Points</th>
 </tr>
-<tr><td>1</td><td>PSG</td><td>65</td></tr>
-<tr><td>2</td><td>Marseille</td><td>59</td></tr>
-<tr><td>3</td><td>Monaco</td><td>55</td></tr>
-<tr><td>4</td><td>Lille</td><td>52</td></tr>
+</thead>
+<tbody>
+<tr><td></td><td>PSG</td><td>65</td></tr>
+<tr><td></td><td>Marseille</td><td>59</td></tr>
+<tr><td></td><td>Monaco</td><td>55</td></tr>
+<tr><td></td><td>Lille</td><td>52</td></tr>
+<tr><td></td><td>Lyon</td><td>48</td></tr>
+</tbody>
 </table>
-</div>
 
-</div>
+<script>
+const table = document.querySelector("#classement tbody");
+const rows = Array.from(table.querySelectorAll("tr"));
+
+rows.sort((a,b)=>{
+    const pointsA = parseInt(a.children[2].innerText);
+    const pointsB = parseInt(b.children[2].innerText);
+    return pointsB - pointsA;
+});
+
+rows.forEach((row,index)=>{
+    row.children[0].innerText = index + 1;
+    table.appendChild(row);
+});
+</script>
 
 </body>
 </html>
