@@ -21,7 +21,6 @@ table {
 width: 100%;
 border-collapse: collapse;
 background: rgba(255,255,255,0.05);
-backdrop-filter: blur(10px);
 border-radius: 10px;
 overflow: hidden;
 }
@@ -32,7 +31,6 @@ background: rgba(0,255,200,0.2);
 
 th, td {
 padding: 12px;
-text-align: left;
 }
 
 tbody tr {
@@ -41,7 +39,6 @@ transition: 0.3s;
 
 tbody tr:hover {
 background: rgba(0,255,200,0.2);
-transform: scale(1.01);
 }
 
 .ucl {
@@ -50,21 +47,6 @@ background-color: rgba(0,255,0,0.2);
 
 .relegation {
 background-color: rgba(255,0,0,0.2);
-}
-
-button {
-margin-top: 20px;
-padding: 12px 20px;
-background: #00ffc3;
-border: none;
-border-radius: 8px;
-font-weight: bold;
-cursor: pointer;
-transition: 0.3s;
-}
-
-button:hover {
-background: #00b894;
 }
 </style>
 </head>
@@ -84,50 +66,27 @@ background: #00b894;
 
 <tbody id="classement-body">
 
-<tbody id="classement-body">
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" width="25"> Paris SG</td><td class="points">57</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/5/54/RC_Lens_logo.svg" width="25"> Lens</td><td class="points">53</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/c/c6/Olympique_Lyonnais.svg" width="25"> Lyon</td><td class="points">45</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Olympique_de_Marseille_logo.svg" width="25"> Marseille</td><td class="points">43</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Lille_OSC_logo.svg" width="25"> Lille</td><td class="points">40</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Stade_Rennais_FC.svg" width="25"> Rennes</td><td class="points">40</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/2/2f/AS_Monaco_FC.svg" width="25"> Monaco</td><td class="points">37</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/8/8c/RC_Strasbourg_logo.svg" width="25"> Strasbourg</td><td class="points">35</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/4/45/Stade_Brestois_29_logo.svg" width="25"> Brest</td><td class="points">33</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/7/7e/FC_Lorient_logo.svg" width="25"> Lorient</td><td class="points">33</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Toulouse_FC_logo.svg" width="25"> Toulouse</td><td class="points">31</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Angers_SCO_logo.svg" width="25"> Angers</td><td class="points">29</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/0/05/Le_Havre_AC_logo.svg" width="25"> Le Havre</td><td class="points">26</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/2/24/Paris_FC_logo.svg" width="25"> Paris FC</td><td class="points">26</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/f/fd/OGC_Nice_logo.svg" width="25"> Nice</td><td class="points">24</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/7/75/AJ_Auxerre_logo.svg" width="25"> Auxerre</td><td class="points">18</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/7/79/FC_Nantes_logo.svg" width="25"> Nantes</td><td class="points">17</td></tr>
-
-<tr><td></td><td><img src="https://upload.wikimedia.org/wikipedia/en/6/6d/FC_Metz_logo.svg" width="25"> Metz</td><td class="points">13</td></tr>
-
-</tbody>
+<tr><td></td><td>Paris SG</td><td class="points">57</td></tr>
+<tr><td></td><td>Lens</td><td class="points">53</td></tr>
+<tr><td></td><td>Lyon</td><td class="points">45</td></tr>
+<tr><td></td><td>Marseille</td><td class="points">43</td></tr>
+<tr><td></td><td>Lille</td><td class="points">40</td></tr>
+<tr><td></td><td>Rennes</td><td class="points">40</td></tr>
+<tr><td></td><td>Monaco</td><td class="points">37</td></tr>
+<tr><td></td><td>Strasbourg</td><td class="points">35</td></tr>
+<tr><td></td><td>Brest</td><td class="points">33</td></tr>
+<tr><td></td><td>Lorient</td><td class="points">33</td></tr>
+<tr><td></td><td>Toulouse</td><td class="points">31</td></tr>
+<tr><td></td><td>Angers</td><td class="points">29</td></tr>
+<tr><td></td><td>Le Havre</td><td class="points">26</td></tr>
+<tr><td></td><td>Paris FC</td><td class="points">26</td></tr>
+<tr><td></td><td>Nice</td><td class="points">24</td></tr>
+<tr><td></td><td>Auxerre</td><td class="points">18</td></tr>
+<tr><td></td><td>Nantes</td><td class="points">17</td></tr>
+<tr><td></td><td>Metz</td><td class="points">13</td></tr>
 
 </tbody>
 </table>
-
-<button onclick="trierClassement()">Actualiser classement</button>
 
 <script>
 function trierClassement() {
@@ -135,15 +94,14 @@ let tbody = document.getElementById("classement-body");
 let lignes = Array.from(tbody.querySelectorAll("tr"));
 
 lignes.sort((a, b) => {
-let pointsA = parseInt(a.querySelector(".points").textContent);
-let pointsB = parseInt(b.querySelector(".points").textContent);
-return pointsB - pointsA;
+let aPts = parseInt(a.querySelector(".points").textContent);
+let bPts = parseInt(b.querySelector(".points").textContent);
+return bPts - aPts;
 });
 
 tbody.innerHTML = "";
 
 lignes.forEach((ligne, index) => {
-
 ligne.classList.remove("ucl","relegation");
 
 if(index < 3){
@@ -156,7 +114,6 @@ ligne.classList.add("relegation");
 
 ligne.children[0].textContent = index + 1;
 tbody.appendChild(ligne);
-
 });
 }
 
